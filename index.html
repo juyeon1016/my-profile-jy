@@ -1,56 +1,380 @@
-<!-- SECTION 3: INTERESTS & GOALS -->
-<section id="goals">
-  <h2 class="section-title">
-    <i data-lucide="target"></i>
-    관심 분야 및 진로 목표
-  </h2>
-  <div class="goals-grid">
-    <div class="glass-card goal-card">
-      <div class="goal-header">
-        <div class="goal-icon">
-          <!-- 기존 data-lucide="mega-phone" -> "megaphone"으로 수정 -->
-          <i data-lucide="megaphone"></i>
-        </div>
-        <div>
-          <div style="font-size: 12px; color: var(--accent-cyan); font-weight: 700;">INTEREST AREA</div>
-          <div class="goal-title">관심 스포츠 분야 및 종목</div>
-        </div>
-      </div>
-      <p class="goal-desc">
-        <strong>스포츠 마케팅 (이벤트 기획 / 홍보)</strong><br>
-        현장에서 관객 및 학우들과 직접 호흡하고, 브랜드와 스포츠 콘텐츠의 가치를 효과적으로 전달하는 이벤트 기획 및 미디어 홍보에 높은 관심과 열정을 가지고 있습니다.
-      </p>
-    </div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조주연 | 스포츠 마케팅 포트폴리오</title>
+  <!-- Google Fonts: Inter & Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* --------------------------------------------------
+       RESET & BASE STYLES
+    -------------------------------------------------- */
+    :root {
+      --bg-dark: #07090e;
+      --bg-card: rgba(18, 22, 33, 0.7);
+      --bg-card-hover: rgba(26, 32, 48, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(59, 130, 246, 0.3);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+      --nav-height: 72px;
+      --font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-    <div class="glass-card goal-card">
-      <div class="goal-header">
-        <div class="goal-icon">
-          <i data-lucide="briefcase"></i>
-        </div>
-        <div>
-          <div style="font-size: 12px; color: var(--accent-cyan); font-weight: 700;">CAREER TARGET</div>
-          <div class="goal-title">희망 진로 및 직무</div>
-        </div>
-      </div>
-      <p class="goal-desc">
-        <strong>스포츠 마케터 (Sports Marketer)</strong><br>
-        타깃 분석 기반의 마케팅 전략 수립부터 콘텐츠 제작, 현장 이벤트 운영까지 총괄하는 전문 스포츠 마케터로 성장하고자 합니다.
-      </p>
-    </div>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <div class="glass-card goal-card" style="grid-column: 1 / -1;">
-      <div class="goal-header">
-        <div class="goal-icon">
-          <i data-lucide="compass"></i>
-        </div>
-        <div>
-          <div style="font-size: 12px; color: var(--accent-cyan); font-weight: 700;">FUTURE VISION</div>
-          <div class="goal-title">앞으로의 목표</div>
-        </div>
-      </div>
-      <p class="goal-desc" style="font-size: 17px; color: #fff; font-weight: 500;">
-        "호기심을 성과로 바꾸는 대학 생활을 통해, 미래의 도전을 유연하게 해결할 수 있는 탄탄한 내공을 다지겠습니다."
-      </p>
-    </div>
-  </div>
-</section>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* --------------------------------------------------
+       NAVIGATION BAR (FIXED)
+    -------------------------------------------------- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background: rgba(7, 9, 14, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-name {
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: all 0.25s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-cta {
+      background: var(--accent-gradient);
+      color: #fff !important;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    }
+
+    .nav-cta:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* --------------------------------------------------
+       LAYOUT CONTAINER
+    -------------------------------------------------- */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: calc(var(--nav-height) + 40px) 24px 80px;
+    }
+
+    section {
+      margin-bottom: 90px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+    }
+
+    .section-title i {
+      color: var(--accent-blue);
+    }
+
+    /* --------------------------------------------------
+       CARD BASE STYLE (APPLE / MIT MEDIA LAB STYLE)
+    -------------------------------------------------- */
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 36px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* --------------------------------------------------
+       1. HERO & PROFILE SECTION
+    -------------------------------------------------- */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .profile-img-container {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .profile-img-container:hover .profile-img {
+      transform: scale(1.02);
+    }
+
+    .img-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 250px;
+      background: #111827;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-name {
+      font-size: 38px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 2px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .dept-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-radius: 100px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      width: fit-content;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+    }
+
+    .dept-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+    }
+
+    .hero-quote-box {
+      position: relative;
+      padding: 24px 28px;
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 4px solid var(--accent-blue);
+      border-radius: 0 16px 16px 0;
+      margin: 6px 0;
+    }
+
+    .hero-quote-label {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-cyan);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .hero-quote {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+    }
+
+    .hero-description {
+      font-size: 16px;
+      color: #d1d5db;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+
+    .strengths-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .strength-tag {
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      font-size: 15px;
+      font-weight: 600;
+      color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .strength-tag:hover {
+      background: rgba(59, 130, 246, 0.1);
+      border-color: rgba(59, 130, 246, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .strength-tag i {
+      color: var(--accent-cyan);
+    }
+
+    /* --------------------------------------------------
+       2. GOALS & VISION
+    -------------------------------------------------- */
+    .goals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .goal-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .goal-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
